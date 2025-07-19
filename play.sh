@@ -12,7 +12,7 @@ search_dur=30
 if [ ! -f "$vid2_offset" ]; then
   echo "Finding offset between videos..."
   offset=$(
-    uv run --project ./main.py \
+    uv run ./main.py \
       --start1 "$start1" \
       --start2 "$start2" \
       --search_dur "$search_dur" \
