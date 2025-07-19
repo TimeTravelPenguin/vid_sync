@@ -1,3 +1,5 @@
+#!/bin/bash
+
 vid1="./vid1.mp4"
 vid2="./vid2.mp4"
 vid2_offset="./video2_offset.mp4"
