@@ -73,7 +73,20 @@ def build_parser() -> argparse.ArgumentParser:
 
 def extract_audio(video_path: Path, audio_path: Path, sr: int = 16000) -> None:
     # Extract mono 16 kHz WAV
-    subprocess.run(["ffmpeg", "-y", "-i", video_path, "-ac", "1", "-ar", sr, audio_path], check=True)
+    subprocess.run(
+        [
+            "ffmpeg",
+            "-y",
+            "-i",
+            video_path,
+            "-ac",
+            "1",
+            "-ar",
+            str(sr),
+            audio_path,
+        ],
+        check=True,
+    )
 
 
 def start_seconds(h: int, m: int, s: int) -> float:
