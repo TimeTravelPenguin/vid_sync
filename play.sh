@@ -1,12 +1,17 @@
 #!/bin/bash
 
+# ===== Config =====
+
 vid1="./vid1.mp4"
 vid2="./vid2.mp4"
-vid2_offset="./video2_offset.mp4"
 
 start1="00h23m25s"
 start2="00h54m45s"
+
+# ==================
+
 search_dur=30
+vid2_offset="./video2_offset.mp4"
 
 # If offset video does not exist, create it
 if [ ! -f "$vid2_offset" ]; then
