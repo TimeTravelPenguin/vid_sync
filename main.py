@@ -77,6 +77,10 @@ def extract_audio(video_path: Path, audio_path: Path, sr: int = 16000) -> None:
         [
             "ffmpeg",
             "-y",
+            "-hide_banner",
+            "-loglevel",
+            "error",
+            "-stats",
             "-i",
             video_path,
             "-ac",
@@ -163,8 +167,8 @@ if __name__ == "__main__":
     vid1 = vid1.resolve(strict=True)
     vid2 = vid2.resolve(strict=True)
 
-    wav1 = Path(vid1).with_suffix(".wav")
-    wav2 = Path(vid2).with_suffix(".wav")
+    wav1 = "./tmp" / Path(vid1.with_suffix(".wav").name)
+    wav2 = "./tmp" / Path(vid2.with_suffix(".wav").name)
 
     # Extract Audio Segments
     if not wav1.exists():
@@ -182,10 +186,6 @@ if __name__ == "__main__":
         template_dur=search_dur,
         search_dur=2 * search_dur,
     )
-
-    # Clean up and return
-    wav1.unlink(missing_ok=True)
-    wav2.unlink(missing_ok=True)
 
     if not args.silent:
         print(f"Best match at {offset:.2f}s into video2 search clip")
