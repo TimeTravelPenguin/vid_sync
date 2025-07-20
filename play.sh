@@ -1,12 +1,19 @@
 #!/bin/bash
 
+secs() {
+  local h=$1
+  local m=$2
+  local s=$3
+  echo $((h * 3600 + m * 60 + s))
+}
+
 # ===== Config =====
 
-vid1="./vid1.mp4"
-vid2="./vid2.mp4"
+vid1="./../CDawgVODs - Continuing Dark Souls Co-op With Ironmouse! (Part 2).mp4"
+vid2="./../IRONMOUSE VODS - Ironmouse & Connor Play Dark Souls Remastered (Day 2).mp4"
 
-start1="00h23m25s"
-start2="00h54m45s"
+start1=$(secs 00 23 25)
+start2=$(secs 00 54 45)
 
 # ==================
 

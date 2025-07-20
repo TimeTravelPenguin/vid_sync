@@ -8,6 +8,7 @@ dependencies = [
     "librosa>=0.11.0",
     "numpy>=2.2.6",
     "scipy>=1.16.0",
+    "syncstart>=1.1.1",
 ]
 
 [dependency-groups]
